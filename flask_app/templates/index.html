@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <meta charset="utf-8">
+        <title>영화 및 OTT 추천 웹 사이트</title>
+        <style>
+            h1{text-align:center;}
+            h2{text-align:center;}
+            form{text-align:center;}
+            hr{
+                width:50%;
+                background-color:rgb(57, 111, 211);
+                margin-left : auto;
+                margin-right : auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>어떤 영화가 보고 싶으신가요?</h1>
+        <h2>옵션에 맞게 영화와 OTT 플랫폼을 추천해 드릴게요!</h2>
+        <hr size="7">
+        <form method="post" action="report">
+            <input type="text" placeholder="유저아이디" id="id">
+            <select name="상영시간" id="running_time">
+                <option value="short">1시간 이내</option>
+                <option value="middle">2시간 이내</option>
+                <option value="long">2시간 이상</option>
+                <option value="any">상관 없음</option>
+            </select>
+            <select name="국가" id="country">
+                <option value="korea">한국</option>
+                <option value="usa">미국</option>
+                <option value="japan">일본</option>
+                <option value="china">중국</option>
+                <option value="spain">스페인</option>
+                <option value="france">프랑스</option>
+                <option value="uk">영국</option>
+                <option value="german">독일</option>
+                <option value="india">인도</option>
+                <option value="italy">이탈리아</option>
+                <option value="any">상관 없음</option>
+            </select>
+            <select name="연령등급" id="age_limit">
+                <option value="all">전체관람가</option>
+                <option value="twelve">12세이상</option>
+                <option value="fifteen">15세이상</option>
+                <option value="eighteen">청소년관람불가</option>
+                <option value="any">상관 없음</option>
+            </select>
+            <select name="장르" id="genre">
+                <option value="drama">드라마</option>
+                <option value="documentary">다큐멘터리</option>
+                <option value="comedy">코미디</option>
+                <option value="action">액션</option>
+                <option value="animation">애니메이션</option>
+                <option value="thriller">스릴러</option>
+                <option value="horor">공포</option>
+                <option value="romance">로맨스</option>
+                <option value="any">상관 없음</option>
+            </select>
+            <input type="submit" value="입력">
+        </form>
+    </body>
+</html>
