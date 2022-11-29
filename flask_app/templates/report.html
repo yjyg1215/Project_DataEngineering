@@ -1,12 +1,61 @@
 <html>
     <head>
-        <!-- CSS only -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        
         <meta charset="utf-8">
         <title>영화 및 OTT 추천 웹 사이트</title>
+        <style>
+            h1{text-align:center;}
+            h2{text-align:center;}
+            form{text-align:center;}
+            hr{
+                width:50%;
+                background-color:rgb(57, 111, 211);
+                margin-left : auto;
+                margin-right : auto;
+            }
+        </style>
     </head>
     <body>
-        
+        <h1>{{ options['user_id'] }} 님,</h1>
+        <h2>{{ ott }} 가 가장 좋을 것 같아요 !</h2>
+        <hr size="7">
+        <h2>추천 영화</h2>
+        <table border="1" width="1024" align="center">
+            <tr align="center">
+                <td>제목</td>
+                <td>평점</td>
+                <td>연도</td>
+                <td>국가</td>
+                <td>상영시간</td>
+                <td>연령 제한</td>
+                <td>장르</td>
+                <td>감독</td>
+                <td>넷플릭스</td>
+                <td>웨이브</td>
+                <td>티빙</td>
+                <td>디즈니플러스</td>
+                <td>왓챠</td>
+                <td>쿠팡플레이</td>
+                <td>네이버시리즈</td>
+            </tr>
+            {% for idx in reports.index %}
+            <tr align="center">
+                <td>{{ reports.iloc[idx,15] }}</td>
+                <td>{{ reports.iloc[idx,2] }}</td>
+                <td>{{ reports.iloc[idx,1] }}</td>
+                <td>{{ reports.iloc[idx,4] }}</td>
+                <td>{{ reports.iloc[idx,3] }}</td>
+                <td>{{ reports.iloc[idx,5] }}</td>
+                <td>{{ reports.iloc[idx,6] }}</td>
+                <td>{{ reports.iloc[idx,7] }}</td>
+                <td>{{ reports.iloc[idx,8] }}</td>
+                <td>{{ reports.iloc[idx,9] }}</td>
+                <td>{{ reports.iloc[idx,10] }}</td>
+                <td>{{ reports.iloc[idx,11] }}</td>
+                <td>{{ reports.iloc[idx,12] }}</td>
+                <td>{{ reports.iloc[idx,13] }}</td>
+                <td>{{ reports.iloc[idx,14] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
     </body>
 </html>
